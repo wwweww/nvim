@@ -1,0 +1,17 @@
+require("plugins.plugins-setup")
+require("core.options")
+require("core.keymaps")
+
+-- plugin
+require("plugin-configs.lualine")
+require("plugin-configs.nvim-tree")
+require("plugin-configs.treesitter")
+require("plugin-configs.lsp")
+require("plugin-configs.cmp")
+require("plugin-configs.comment")
+require("plugin-configs.autopairs")
+require("plugin-configs.bufferline")
+require("plugin-configs.gitsigns")
+require("plugin-configs.telescope")
+require("plugin-configs.guess-indent")
+-- require("plugin-configs.coc")

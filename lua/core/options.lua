@@ -19,9 +19,6 @@ vim.o.splitbelow = true
 vim.o.termguicolors = true
 
 -- 设置主题
-vim.cmd[[colorscheme nord]]
-
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-
+-- vim.cmd[[colorscheme nord]]
+vim.cmd.colorscheme('tokyonight-moon')
 

@@ -109,6 +109,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["galaxyline.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30galaxyline.themes.eviline\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\galaxyline.nvim",
+    url = "https://github.com/NTBBloodbath/galaxyline.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gitsigns.nvim",
@@ -119,10 +125,15 @@ _G.packer_plugins = {
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\guess-indent.nvim",
     url = "https://github.com/nmac427/guess-indent.nvim"
   },
-  ["lualine.nvim"] = {
+  ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -133,11 +144,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -170,9 +176,8 @@ _G.packer_plugins = {
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\nvim-web-devicons",
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -189,10 +194,24 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: galaxyline.nvim
+time([[Config for galaxyline.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30galaxyline.themes.eviline\frequire\0", "config", "galaxyline.nvim")
+time([[Config for galaxyline.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -19,19 +19,32 @@ vim.cmd([[
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  -- 插件在这安装
-  use 'shaunsingh/nord.nvim' -- 主题
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  } -- 状态栏
+  use 'kyazdani42/nvim-web-devicons'
+
+  -- 插件在这安装
+  -- use 'shaunsingh/nord.nvim' -- 主题
+
+    use {
+        'folke/tokyonight.nvim',
+    }
+
+  use({
+  "NTBBloodbath/galaxyline.nvim",
+  -- your statusline
+  config = function()
+    require("galaxyline.themes.eviline")
+  end,
+  }) -- 状态栏
+
+  -- use {
+  --   'nvim-lualine/lualine.nvim',
+  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  -- } -- 状态栏
 
   use {
   'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  },
+
   tag = 'nightly' -- optional, updated every week. (see issue #1193)
   } -- 文件树
 
@@ -67,6 +80,15 @@ return require('packer').startup(function(use)
 
 -- 自能缩进
   use "nmac427/guess-indent.nvim"
+
+-- 命令行终端
+  use "akinsho/toggleterm.nvim"
+
+-- 变量rename
+  use "glepnir/lspsaga.nvim"
+
+-- 缩进线
+  use "lukas-reineke/indent-blankline.nvim"
 
 -- coc代码补全
   -- use "neoclide/coc.nvim"

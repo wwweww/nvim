@@ -6,7 +6,9 @@ local keymap = vim.keymap.set
 -- ---------- 插入模式 ----------
 -- i
 -- shiht + cr直接换行
-keymap("i", "<S-Enter>", "<Esc>O")
+keymap("i", "<S-Enter>", "<Esc>o")
+keymap("i", "<C-/>", "<Esc>gcca")
+
 
 -- -----------------------------i END
 
@@ -25,7 +27,7 @@ keymap("n", "<LEADER><CR>", ":noh<CR>")
 keymap("n", "S", ":w<CR>")
 keymap("n", "s", "<nop>")
 keymap("n", "Q", ":q<CR>")
-keymap("n", "R", ":so<CR>")
+keymap("n", "R", ":source $MYVIMRC<CR>")
 ---------------------------------
 
 -- 打开文件树
@@ -49,6 +51,7 @@ keymap("n", "<C-h>", ":bprevious<CR>")
 
 -- ---------- 视觉模式 ----------
 -- v
+keymap("v", "<C-/>", "gc")
 
 -- -----------------------------v END
 
@@ -58,7 +61,7 @@ keymap("n", "<C-h>", ":bprevious<CR>")
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+  -- vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
   vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
   vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)

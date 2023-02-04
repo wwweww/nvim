@@ -25,17 +25,30 @@ return require('packer').startup(function(use)
   -- 插件在这安装
   -- use 'shaunsingh/nord.nvim' -- 主题
 
-    use {
-        'folke/tokyonight.nvim',
-    }
+use {
+  'JoosepAlviste/palenightfall.nvim',
+}
+use {
+  'folke/tokyonight.nvim',
+}
 
-  use({
-  "NTBBloodbath/galaxyline.nvim",
-  -- your statusline
-  config = function()
-    require("galaxyline.themes.eviline")
-  end,
-  }) -- 状态栏
+use {
+  'rose-pine/neovim',
+  as = 'rose-pine'
+}
+
+
+--- 状态栏
+
+use "windwp/windline.nvim"
+
+  -- use({
+  -- "NTBBloodbath/galaxyline.nvim",
+  -- -- your statusline
+  -- config = function()
+  --   require("galaxyline.themes.eviline")
+  -- end,
+  -- }) -- 状态栏
 
   -- use {
   --   'nvim-lualine/lualine.nvim',
@@ -89,6 +102,13 @@ return require('packer').startup(function(use)
 
 -- 缩进线
   use "lukas-reineke/indent-blankline.nvim"
+
+-- 透明
+  use "xiyaowong/nvim-transparent"
+
+-- 平滑光标
+  -- use 'gen740/SmoothCursor.nvim' 
+  use { 'gen740/SmoothCursor.nvim'}
 
 -- coc代码补全
   -- use "neoclide/coc.nvim"

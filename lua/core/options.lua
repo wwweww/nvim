@@ -2,6 +2,7 @@
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.cursorline = true
+vim.o.cursorcolumn = true
 vim.o.showcmd = true
 vim.o.wildmenu = true
 vim.o.hlsearch = true
@@ -32,7 +33,21 @@ vim.o.termguicolors = true
 -- vim.cmd[[colorscheme nord]]
 -- vim.cmd.colorscheme('palenightfall')
 vim.cmd[[colorscheme rose-pine]]
+-- vim.cmd.colorscheme("omni")
+-- vim.cmd.colorscheme("edge")
+-- vim.cmd.colorscheme("nightfox")
+
+-- require("onedark").setup({
+-- 	style = "darker"
+-- })
+-- require("onedark").load()
 
 -- 背景透明设置
 vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+
+
+
+
+
+
 

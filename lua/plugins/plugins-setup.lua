@@ -23,7 +23,18 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   -- 插件在这安装
-  -- use 'shaunsingh/nord.nvim' -- 主题
+  --
+  use 'Abstract-IDE/Abstract-cs'
+
+  use 'shaunsingh/nord.nvim' -- 主题
+
+  use "yonlu/omni.vim"
+
+  use 'navarasu/onedark.nvim'
+
+  use "EdenEast/nightfox.nvim"
+
+  use "sainnhe/edge"
 
 use {
   'JoosepAlviste/palenightfall.nvim',

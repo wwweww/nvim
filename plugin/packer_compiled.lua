@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Abstract-cs"] = {
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\Abstract-cs",
+    url = "https://github.com/Abstract-IDE/Abstract-cs"
+  },
   ["Comment.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\Comment.nvim",
@@ -109,6 +114,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  edge = {
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\edge",
+    url = "https://github.com/sainnhe/edge"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
@@ -143,6 +153,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -183,6 +203,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["omni.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\omni.vim",
+    url = "https://github.com/yonlu/omni.vim"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Asadz\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

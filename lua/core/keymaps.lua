@@ -3,6 +3,22 @@ vim.g.mapleader = " "
 -- 减少输入
 local keymap = vim.keymap.set
 
+------------ 分屏 ---------------
+
+keymap("", "sl", ":set splitright<CR>:vsplit<CR>")
+keymap("", "sh", ":set nosplitright<CR>:vsplit<CR>")
+keymap("", "sk", ":set nosplitbelow<CR>:split<CR>")
+keymap("", "sj", ":set splitbelow<CR>:split<CR>")
+
+keymap("n", "<UP>", ":res +5<CR>")
+keymap("n", "<down>", ":res -5<CR>")
+keymap("n", "<left>", ":vertical resize-5<CR>")
+keymap("n", "<right>", ":vertical resize+5<CR>")
+
+---------------------------------
+
+
+
 -- ---------- 插入模式 ----------
 -- i
 -- shiht + cr直接换行

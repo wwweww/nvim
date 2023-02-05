@@ -1,12 +1,12 @@
 local default = {
 	autostart = true,
-	cursor = "", -- cursor shape (need nerd font)
+	cursor = "", -- cursor shape (need nerd font)
 	intervals = 35, -- tick interval
 	linehl = nil, -- highlight sub-cursor line like 'cursorline', "CursorLine" recommended
 	type = "exp", -- define cursor movement calculate function, "default" or "exp" (exponential).
 	fancy = {
-		enable = true, -- enable fancy module
-		head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
+		enable = false, -- enable fancy module
+		head = { cursor = "", texthl = "SmoothCursor", linehl = nil },
 		body = {
 			{ cursor = "", texthl = "SmoothCursorRed" },
 			{ cursor = "", texthl = "SmoothCursorOrange" },

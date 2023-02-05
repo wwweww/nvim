@@ -7,6 +7,11 @@ vim.o.showcmd = true
 vim.o.wildmenu = true
 vim.o.hlsearch = true
 
+-- 缩进
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+
 -- 搜索自能大小写
 vim.o.incsearch = true
 vim.o.ignorecase = true

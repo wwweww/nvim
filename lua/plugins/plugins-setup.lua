@@ -118,8 +118,17 @@ use "windwp/windline.nvim"
   use "xiyaowong/nvim-transparent"
 
 -- 平滑光标
-  -- use 'gen740/SmoothCursor.nvim' 
   use { 'gen740/SmoothCursor.nvim'}
+
+-- 调试
+  use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
+  use "ravenxrz/nvim-dap"
+  use "theHamsta/nvim-dap-virtual-text"
+  use "rcarriga/nvim-dap-ui"
+  -- use { "jbyuki/one-small-step-for-vimkind", module = "osv" }
+  use "nvim-telescope/telescope-dap.nvim"
+  use "jay-babu/mason-nvim-dap.nvim"
+
 
 -- coc代码补全
   -- use "neoclide/coc.nvim"

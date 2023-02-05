@@ -8,6 +8,11 @@ require("mason").setup({
   }
 })
 
+require("mason-nvim-dap").setup({
+  ensure_installed = { "python" },
+  automatic_setup = true
+})
+
 require("mason-lspconfig").setup({
   -- 确保安装，根据需要填写
   ensure_installed = {

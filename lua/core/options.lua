@@ -27,6 +27,18 @@ vim.o.wrap = true
 -- 开启鼠标
 vim.o.mouse = 'a'
 
+-- 系统剪切板
+vim.opt.clipboard:append("unnamedplus")
+
+if vim.fn.has("wsl") then
+ vim.cmd [[
+ augroup Yank
+ autocmd!
+ autocmd TextYankPost * :call system('/mnt/c/Windows/System32/clip.exe', @")
+ augroup END
+ ]]
+end
+
 -- 主题颜色
 vim.o.termguicolors = true
 
@@ -51,8 +63,18 @@ vim.cmd[[colorscheme rose-pine]]
 vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
 
 
-
-
-
-
-
+vim.cmd[[
+if executable('clipboard-provider')
+ let g:clipboard = {
+         \ 'name': 'myClipboard',
+         \     'copy': {
+         \         '+': 'clipboard-provider copy',
+         \         '*': 'clipboard-provider copy',
+         \     },
+         \     'paste': {
+         \         '+': 'clipboard-provider paste',
+         \         '*': 'clipboard-provider paste',
+         \     },
+         \ }
+endif
+]]

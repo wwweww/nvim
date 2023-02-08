@@ -78,3 +78,15 @@ if executable('clipboard-provider')
          \ }
 endif
 ]]
+
+-- 打开时光标在上一次的位置
+vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+    pattern = "*",
+    command = [[if line("'\"") >= 1 && line("'\"") <= line("$") |   exe "normal! g`\"" | endif]],
+  })
+
+-- 打开时开启智能缩进
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = "*",
+    command = [[BracelessEnable +indent +fold]]
+})

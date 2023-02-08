@@ -16,7 +16,8 @@ require("mason-nvim-dap").setup({
 require("mason-lspconfig").setup({
   -- 确保安装，根据需要填写
   ensure_installed = {
-    "sumneko_lua",
+    -- "sumneko_lua",
+    "clangd",
     "pyright",
     "html",
   },
@@ -29,3 +30,5 @@ require("lspconfig").sumneko_lua.setup {
 }
 
 require'lspconfig'.pyright.setup{}
+require"lspconfig".clangd.setup{}
+require"lspconfig".tsserver.setup{}

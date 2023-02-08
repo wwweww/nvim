@@ -11,5 +11,6 @@ require("transparent").setup({
     "BufferLineSeparator",
     "BufferLineIndicatorSelected",
   },
+  -- extra_groups = 'all',
   exclude = {}, -- table: groups you don't want to clear
 })

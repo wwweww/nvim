@@ -1,0 +1,13 @@
+-- -- require("braceless").setup{}
+-- vim.cmd [[autocmd FileType python BracelessEnable +indent]]
+-- vim.cmd[[autocmd FileType haml,yaml,coffee BracelessEnable +indent +fold +highlight]]
+-- vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"},{
+-- 	command = "autocmd FileType python BracelessEnable +indent"
+-- })
+
+-- vim.cmd([[
+--   augroup Bracele
+--     autocmd!
+-- 	autocmd FileType python BracelessEnable +indent
+--   augroup END
+-- ]])

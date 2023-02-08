@@ -131,6 +131,8 @@ use "windwp/windline.nvim"
   use "nvim-telescope/telescope-dap.nvim"
   use "jay-babu/mason-nvim-dap.nvim"
 
+-- 启动页
+  use 'glepnir/dashboard-nvim'
 
 -- coc代码补全
   -- use "neoclide/coc.nvim"

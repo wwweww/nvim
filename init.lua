@@ -17,7 +17,15 @@ require("plugin-configs.guess-indent")
 require("plugin-configs.toggleterm")
 require("plugin-configs.lspsaga")
 require("plugin-configs.blankline")
+require("plugin-configs.indent-o-matic")
+-- require("plugin-configs.braceless")
 require("plugin-configs.transparent")
 require("plugin-configs.windline")
 require("plugin-configs.smoothcursor")
+require("plugin-configs.bashboard")
 -- require("plugin-configs.coc")
+--
+--
+
+
+-- vim.cmd [[autocmd FileType python BracelessEnable +indent +fold]]

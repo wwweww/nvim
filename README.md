@@ -1,5 +1,6 @@
 # nvim
-需要安装node python yarn
+This condig needs to install base-devel(gcc cc) python nodejs npm
+Take Arch as an example:
 ```shell
 sudo pacman -S base-devel python python-pip nodejs npm
 pip install pyright

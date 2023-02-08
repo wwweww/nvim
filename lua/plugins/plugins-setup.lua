@@ -104,6 +104,8 @@ use "windwp/windline.nvim"
 
 -- 自能缩进
   use "nmac427/guess-indent.nvim"
+  use "Darazaki/indent-o-matic"
+  use 'tweekmonster/braceless.vim'
 
 -- 命令行终端
   use "akinsho/toggleterm.nvim"

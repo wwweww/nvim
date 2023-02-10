@@ -169,6 +169,11 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
+  ["mason-null-ls.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
+    url = "https://github.com/jay-babu/mason-null-ls.nvim"
+  },
   ["mason-nvim-dap.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/mason-nvim-dap.nvim",
@@ -188,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/nord.nvim",
     url = "https://github.com/shaunsingh/nord.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -218,6 +228,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-toggler"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-toggler",
+    url = "https://github.com/nguyenvukhang/nvim-toggler"
   },
   ["nvim-transparent"] = {
     loaded = true,
@@ -263,6 +278,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/palenightfall.nvim",
     url = "https://github.com/JoosepAlviste/palenightfall.nvim"
+  },
+  penvim = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/penvim",
+    url = "https://github.com/Abstract-IDE/penvim"
   },
   ["plenary.nvim"] = {
     loaded = true,

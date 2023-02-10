@@ -82,6 +82,13 @@ use "windwp/windline.nvim"
     "neovim/nvim-lspconfig"
   }
 
+-- null-ls
+  use {
+    "nvim-lua/plenary.nvim",
+    "jose-elias-alvarez/null-ls.nvim",
+    "jay-babu/mason-null-ls.nvim",
+  }
+
   -- 代码片段
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-nvim-lsp"
@@ -103,9 +110,13 @@ use "windwp/windline.nvim"
   }
 
 -- 自能缩进
+  use {'Abstract-IDE/penvim'}
   use "nmac427/guess-indent.nvim"
   use "Darazaki/indent-o-matic"
   use 'tweekmonster/braceless.vim'
+
+-- 反转输入 T -> F on -> off
+  use "nguyenvukhang/nvim-toggler"
 
 -- 命令行终端
   use "akinsho/toggleterm.nvim"

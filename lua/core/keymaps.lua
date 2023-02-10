@@ -33,6 +33,8 @@ keymap("i", "<C-/>", "<Esc>gcca")
 -- ---------- 普通模式 ----------
 -- n
 
+-- 代码格式化
+keymap("n", "<LEADER>lf", ":lua vim.lsp.buf.format()<CR>")
 -- 搜索 上一个 下一个 取消高亮
 keymap("n", "=", "nzz")
 keymap("n", "-", "Nzz")
@@ -106,3 +108,7 @@ keymap("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opts)
 -- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 -- keymap("n", "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
+
+keymap("n", "<LEADER>lf", "<cmd>lua vim.lsp.buf.format()<CR>")
+-- 反转
+-- vim.keymap.set({ 'n', 'v' }, '<leader>cl', require('nvim-toggler').toggle)

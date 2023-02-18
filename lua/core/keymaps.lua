@@ -25,6 +25,13 @@ keymap("n", "<right>", ":vertical resize+5<CR>")
 keymap("i", "<S-Enter>", "<Esc>o")
 keymap("i", "<C-/>", "<Esc>gcca")
 
+-- 中英文符号
+keymap("i", "“", "\"")
+keymap("i", "‘", "'")
+keymap("i", "；", ";")
+keymap("i", "【", "[")
+keymap("i", "】", "]")
+
 
 -- -----------------------------i END
 
@@ -49,11 +56,18 @@ keymap("n", "R", ":source $MYVIMRC<CR>")
 ---------------------------------
 
 -- 打开文件树
-keymap("n", "<C-b>", ":NvimTreeToggle<CR>")
+keymap("n", "tn", ":NvimTreeToggle<CR>")
 
 -- 打开终端
 keymap("", "<C-\\>", ":ToggleTerm<CR>")
 
+-- 打开变量查询
+keymap("", "<C-c>", ":Telescope treesitter<CR>")
+
+keymap("n", "J", "5j")
+keymap("n", "K", "5k")
+-- kaymap("n", "J", "5j")
+-- kaymap("n", "K", "5k")
 
 -- 切换 buffer
 keymap("n", "<C-l>", ":bnext<CR>")
@@ -104,7 +118,7 @@ keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
 keymap("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
-keymap("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opts)
+-- keymap("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opts)
 -- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 -- keymap("n", "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", opts)
 

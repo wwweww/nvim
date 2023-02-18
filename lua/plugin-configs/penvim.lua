@@ -15,4 +15,24 @@ require("penvim").setup({
 		enable = true, -- enable/disable project_env
 		config_name = '.__nvim__.lua' -- config file name
 	},
+	-- for all file types
+	all = {
+		tabstop = 4, -- spaces per tab
+		cursorline = true, -- highlight current line
+		relativenumber = true, -- show relative line number
+		number = true, -- show line numbers
+	},
+
+	-- for filetype lua
+	lua = {	
+		smarttab = true, -- <tab>/<BS> indent/dedent in leading whitespace
+		softtabstop = 4,
+		shiftwidth = 4, -- spaces per tab (when shifting), when using the >> or << commands, shift lines by 4 spaces
+	},
+	
+	-- for filetype python and javascript
+	py_js = {
+		tabstop = 4, -- spaces per tab
+		wrap = false, -- don't automatically wrap on load
+	}
 })

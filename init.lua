@@ -7,7 +7,7 @@ require("core.keymaps")
 require("plugin-configs.nvim-tree")
 require("plugin-configs.treesitter")
 require("plugin-configs.lsp")
-require("plugin-configs.cmp")
+require("plugin-configs.cmp") -- 打开后tab补全有问题
 require("plugin-configs.comment")
 require("plugin-configs.autopairs")
 require("plugin-configs.bufferline")
@@ -26,6 +26,7 @@ require("plugin-configs.smoothcursor")
 require("plugin-configs.bashboard")
 require("plugin-configs.penvim")
 require("plugin-configs.toggler")
+require("plugin-configs.todo")
 -- require("plugin-configs.coc")
 --
 --

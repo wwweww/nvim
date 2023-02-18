@@ -28,6 +28,8 @@ return require('packer').startup(function(use)
 
   use 'shaunsingh/nord.nvim' -- 主题
 
+  use "sainnhe/everforest"
+
   use "yonlu/omni.vim"
 
   use 'navarasu/onedark.nvim'
@@ -88,6 +90,9 @@ use "windwp/windline.nvim"
     "jose-elias-alvarez/null-ls.nvim",
     "jay-babu/mason-null-ls.nvim",
   }
+
+-- todo
+  use "folke/todo-comments.nvim"
 
   -- 代码片段
   use "hrsh7th/nvim-cmp"

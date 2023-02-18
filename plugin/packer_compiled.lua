@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/edge",
     url = "https://github.com/sainnhe/edge"
   },
+  everforest = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -303,6 +308,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,

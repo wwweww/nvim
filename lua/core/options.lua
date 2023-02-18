@@ -7,6 +7,9 @@ vim.o.showcmd = true
 vim.o.wildmenu = true
 vim.o.hlsearch = true
 
+-- 末尾留五行
+vim.o.scrolloff = 6
+
 -- 缩进
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
@@ -49,7 +52,6 @@ vim.o.termguicolors = true
 
 -- vim.cmd[[colorscheme nord]]
 -- vim.cmd.colorscheme('palenightfall')
-vim.cmd[[colorscheme rose-pine]]
 -- vim.cmd.colorscheme("omni")
 -- vim.cmd.colorscheme("edge")
 -- vim.cmd.colorscheme("nightfox")
@@ -60,24 +62,33 @@ vim.cmd[[colorscheme rose-pine]]
 -- require("onedark").load()
 
 -- 背景透明设置
+require("nightfox").setup({
+ options = {
+  transparent = true
+ }
+})
+
+vim.g.nightfox_transparent = vim.g.transparent_enabled
+vim.cmd[[colorscheme terafox]]
+vim.api.nvim_set_hl(0, "Normal", {bg=nil, ctermbg=nil})
 vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
 
 
-vim.cmd[[
-if executable('clipboard-provider')
- let g:clipboard = {
-         \ 'name': 'myClipboard',
-         \     'copy': {
-         \         '+': 'clipboard-provider copy',
-         \         '*': 'clipboard-provider copy',
-         \     },
-         \     'paste': {
-         \         '+': 'clipboard-provider paste',
-         \         '*': 'clipboard-provider paste',
-         \     },
-         \ }
-endif
-]]
+-- vim.cmd[[
+-- if executable('clipboard-provider')
+--  let g:clipboard = {
+--          \ 'name': 'myClipboard',
+--          \     'copy': {
+--          \         '+': 'clipboard-provider copy',
+--          \         '*': 'clipboard-provider copy',
+--          \     },
+--          \     'paste': {
+--          \         '+': 'clipboard-provider paste',
+--          \         '*': 'clipboard-provider paste',
+--          \     },
+--          \ }
+-- endif
+-- ]]
 
 -- 打开时光标在上一次的位置
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {

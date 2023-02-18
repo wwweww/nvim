@@ -68,7 +68,7 @@ keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
 -- there is no information available.
 -- To disable it just use ":Lspsaga hover_doc ++quiet"
 -- Pressing the key twice will enter the hover window
-keymap("n", "<leader>d", "<cmd>Lspsaga hover_doc<CR>")
+-- keymap("n", "<leader>d", "<cmd>Lspsaga hover_doc<CR>")
 
 -- If you want to keep the hover window in the top right hand corner,
 -- you can pass the ++keep argument

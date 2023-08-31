@@ -49,6 +49,7 @@ vim.o.termguicolors = true
 
 -- vim.g.tokyonight_transparent = vim.g.transparent_enabled
 -- vim.cmd.colorscheme('tokyonight-moon')
+vim.cmd.colorscheme("rose-pine")
 
 -- vim.cmd[[colorscheme nord]]
 -- vim.cmd.colorscheme('palenightfall')
@@ -62,16 +63,11 @@ vim.o.termguicolors = true
 -- require("onedark").load()
 
 -- 背景透明设置
-require("nightfox").setup({
- options = {
-  transparent = true
- }
-})
 
-vim.g.nightfox_transparent = vim.g.transparent_enabled
-vim.cmd[[colorscheme terafox]]
-vim.api.nvim_set_hl(0, "Normal", {bg=nil, ctermbg=nil})
-vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+-- vim.g.nightfox_transparent = vim.g.transparent_enabled
+-- vim.cmd[[colorscheme terafox]]
+-- vim.api.nvim_set_hl(0, "Normal", {bg=nil, ctermbg=nil})
+-- vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
 
 
 -- vim.cmd[[

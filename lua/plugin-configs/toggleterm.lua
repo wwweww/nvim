@@ -1,5 +1,6 @@
 require("toggleterm").setup{
-	-- shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell"
+---@diagnostic disable-next-line: undefined-global
+	shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell",
 	float_opts = {
 		border = "curved"
 	}

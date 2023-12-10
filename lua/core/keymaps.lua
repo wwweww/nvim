@@ -21,6 +21,8 @@ keymap("n", "<right>", ":vertical resize+5<CR>")
 
 -- ---------- 插入模式 ----------
 -- i
+-- jk进入普通模式
+keymap("i", "jk", "<C-c>")
 -- shiht + cr直接换行
 keymap("i", "<S-Enter>", "<Esc>o")
 keymap("i", "<C-/>", "<Esc>gcca")
@@ -61,19 +63,22 @@ keymap("n", "tn", ":NvimTreeToggle<CR>")
 -- 打开终端
 keymap("", "<C-\\>", ":ToggleTerm<CR>")
 
--- 打开变量查询
-keymap("", "<C-c>", ":Telescope treesitter<CR>")
 
 keymap("n", "J", "5j")
 keymap("n", "K", "5k")
--- kaymap("n", "J", "5j")
--- kaymap("n", "K", "5k")
 
 -- 切换 buffer
 keymap("n", "<C-l>", ":bnext<CR>")
 keymap("n", "<C-h>", ":bprevious<CR>")
 -- 关闭
 keymap("n", "<LEADER>bw", ":bdelete<CR>")
+-- sneak
+keymap("n", "f", "<Plug>Sneak_f")
+keymap("n", "F", "<Plug>Sneak_F")
+keymap("n", "<leader>s", "<Plug>Sneak_s")
+keymap("n", "<leader>S", "<Plug>Sneak_S")
+
+
 ---------------------------------
 
 
@@ -85,6 +90,11 @@ keymap("n", "<LEADER>bw", ":bdelete<CR>")
 -- ---------- 视觉模式 ----------
 -- v
 keymap("v", "<C-/>", "gc")
+-- keymap("v", "jk", "<C-c>")
+keymap("v", "J", "5j")
+keymap("v", "K", "5k")
+keymap("v", "H", "^")
+keymap("v", "L", "$")
 
 -- -----------------------------v END
 
@@ -92,9 +102,8 @@ keymap("v", "<C-/>", "gc")
 -- ---------- 终端快捷键 -----------
 
 function _G.set_terminal_keymaps()
-  local opts = {buffer = 0}
+  local opts = { buffer = 0 }
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-  -- vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
   vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
   vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
@@ -108,7 +117,8 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 -- ---------------------------------
 --
 -- debug
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint(); require'user.dap.dap-util'.store_breakpoints(true)<cr>", opts)
+keymap("n", "<leader>db",
+  "<cmd>lua require'dap'.toggle_breakpoint(); require'user.dap.dap-util'.store_breakpoints(true)<cr>", opts)
 keymap("n", "<leader>dB", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opts)
 -- keymap("n", "<leader>dr", "lua require'dap'.repl.open()<cr>", opts)
 keymap("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
@@ -125,4 +135,4 @@ keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 
 keymap("n", "<LEADER>lf", "<cmd>lua vim.lsp.buf.format()<CR>")
 -- 反转
--- vim.keymap.set({ 'n', 'v' }, '<leader>cl', require('nvim-toggler').toggle)
+vim.keymap.set({ 'n', 'v' }, '<leader>cl', require('nvim-toggler').toggle)

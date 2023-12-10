@@ -1,8 +1,8 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -27,6 +27,8 @@ return require('packer').startup(function(use)
   use 'Abstract-IDE/Abstract-cs'
 
   use 'shaunsingh/nord.nvim' -- 主题
+  use "AstroNvim/astrotheme"
+  use "olimorris/onedarkpro.nvim"
 
   use "sainnhe/everforest"
 
@@ -38,22 +40,22 @@ return require('packer').startup(function(use)
 
   use "sainnhe/edge"
 
-use {
-  'JoosepAlviste/palenightfall.nvim',
-}
-use {
-  'folke/tokyonight.nvim',
-}
+  use {
+    'JoosepAlviste/palenightfall.nvim',
+  }
+  use {
+    'folke/tokyonight.nvim',
+  }
 
-use {
-  'rose-pine/neovim',
-  as = 'rose-pine'
-}
+  use {
+    'rose-pine/neovim',
+    as = 'rose-pine'
+  }
 
 
---- 状态栏
+  --- 状态栏
 
-use "windwp/windline.nvim"
+  use "windwp/windline.nvim"
 
   -- use({
   -- "NTBBloodbath/galaxyline.nvim",
@@ -69,29 +71,28 @@ use "windwp/windline.nvim"
   -- } -- 状态栏
 
   use {
-  'nvim-tree/nvim-tree.lua',
+    'nvim-tree/nvim-tree.lua',
+    tag = 'nightly'                     -- optional, updated every week. (see issue #1193)
+  }                                     -- 文件树
 
-  tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  } -- 文件树
-
-  use "nvim-treesitter/nvim-treesitter" -- 高亮语法 
-  use "p00f/nvim-ts-rainbow" -- 彩虹括号
+  use "nvim-treesitter/nvim-treesitter" -- 高亮语法
+  use "p00f/nvim-ts-rainbow"            -- 彩虹括号
 
   -- mason
   use {
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",  -- 这个相当于mason.nvim和lspconfig的桥梁
+    "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
     "neovim/nvim-lspconfig"
   }
 
--- null-ls
+  -- null-ls
   use {
     "nvim-lua/plenary.nvim",
     "jose-elias-alvarez/null-ls.nvim",
     "jay-babu/mason-null-ls.nvim",
   }
 
--- todo
+  -- todo
   use "folke/todo-comments.nvim"
 
   -- 代码片段
@@ -102,43 +103,43 @@ use "windwp/windline.nvim"
   use "rafamadriz/friendly-snippets"
   use "hrsh7th/cmp-path" -- 文件路径
 
- -- 一些小功能
-  use "numToStr/Comment.nvim" -- gcc和gc注释
-  use "windwp/nvim-autopairs" -- 自动补全括号
+  -- 一些小功能
+  use "numToStr/Comment.nvim"   -- gcc和gc注释
+  use "windwp/nvim-autopairs"   -- 自动补全括号
 
   use "akinsho/bufferline.nvim" -- buffer分割线
   use "lewis6991/gitsigns.nvim" -- 左则git提示
 
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',  -- 文件检索
-    requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim', tag = '0.1.1', -- 文件检索
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
--- 自能缩进
-  use {'Abstract-IDE/penvim'}
+  -- 自能缩进
+  use { 'Abstract-IDE/penvim' }
   use "nmac427/guess-indent.nvim"
   use "Darazaki/indent-o-matic"
   use 'tweekmonster/braceless.vim'
 
--- 反转输入 T -> F on -> off
+  -- 反转输入 T -> F on -> off
   use "nguyenvukhang/nvim-toggler"
 
--- 命令行终端
+  -- 命令行终端
   use "akinsho/toggleterm.nvim"
 
--- 变量rename
+  -- 变量rename
   use "glepnir/lspsaga.nvim"
 
--- 缩进线
+  -- 缩进线
   use "lukas-reineke/indent-blankline.nvim"
 
--- 透明
+  -- 透明
   use "xiyaowong/nvim-transparent"
 
--- 平滑光标
-  use { 'gen740/SmoothCursor.nvim'}
+  -- 平滑光标
+  use { 'gen740/SmoothCursor.nvim' }
 
--- 调试
+  -- 调试
   use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
   use "ravenxrz/nvim-dap"
   use "theHamsta/nvim-dap-virtual-text"
@@ -147,11 +148,10 @@ use "windwp/windline.nvim"
   use "nvim-telescope/telescope-dap.nvim"
   use "jay-babu/mason-nvim-dap.nvim"
 
--- 启动页
+  -- 启动页
   use 'glepnir/dashboard-nvim'
-
--- coc代码补全
-  -- use "neoclide/coc.nvim"
+  -- sneak
+  use "justinmk/vim-sneak"
 
   if packer_bootstrap then
     require('packer').sync()

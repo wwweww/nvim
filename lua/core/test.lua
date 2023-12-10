@@ -1,3 +1,3 @@
-function print_file_name()
-	print(%)
+function test()
+	print("Hello World")
 end

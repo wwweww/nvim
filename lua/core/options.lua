@@ -1,8 +1,8 @@
 -- 开启基本行号显示 显示操作
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.cursorline = true
-vim.o.cursorcolumn = true
+-- vim.o.cursorline = true
+-- vim.o.cursorcolumn = true
 vim.o.showcmd = true
 vim.o.wildmenu = true
 vim.o.hlsearch = true
@@ -42,58 +42,37 @@ if vim.fn.has("wsl") then
  ]]
 end
 
+-- 设置字体
+vim.o.guifont = "SF Mono Light:h15"
+
 -- 主题颜色
 vim.o.termguicolors = true
 
 -- 设置主题
 
 -- vim.g.tokyonight_transparent = vim.g.transparent_enabled
--- vim.cmd.colorscheme('tokyonight-moon')
-vim.cmd.colorscheme("rose-pine")
+-- vim.cmd.colorscheme('tokyonight-night')
+-- vim.cmd.colorscheme("rose-pine")
 
 -- vim.cmd[[colorscheme nord]]
 -- vim.cmd.colorscheme('palenightfall')
 -- vim.cmd.colorscheme("omni")
 -- vim.cmd.colorscheme("edge")
--- vim.cmd.colorscheme("nightfox")
+--
+require("astrotheme").setup({
+ palette = "astrodark", -- String of the default palette to use when calling `:colorscheme astrotheme`
+})
 
--- require("onedark").setup({
--- 	style = "darker"
--- })
--- require("onedark").load()
+-- vim.cmd.colorscheme('palenightfall')
+vim.cmd.colorscheme("astrodark")
 
--- 背景透明设置
-
--- vim.g.nightfox_transparent = vim.g.transparent_enabled
--- vim.cmd[[colorscheme terafox]]
--- vim.api.nvim_set_hl(0, "Normal", {bg=nil, ctermbg=nil})
--- vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
-
-
--- vim.cmd[[
--- if executable('clipboard-provider')
---  let g:clipboard = {
---          \ 'name': 'myClipboard',
---          \     'copy': {
---          \         '+': 'clipboard-provider copy',
---          \         '*': 'clipboard-provider copy',
---          \     },
---          \     'paste': {
---          \         '+': 'clipboard-provider paste',
---          \         '*': 'clipboard-provider paste',
---          \     },
---          \ }
--- endif
--- ]]
 
 -- 打开时光标在上一次的位置
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
-    pattern = "*",
-    command = [[if line("'\"") >= 1 && line("'\"") <= line("$") |   exe "normal! g`\"" | endif]],
-  })
+ pattern = "*",
+ command = [[if line("'\"") >= 1 && line("'\"") <= line("$") |   exe "normal! g`\"" | endif]],
+})
 
--- -- 打开时开启智能缩进
--- vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
---     pattern = "*",
---     command = [[BracelessEnable +indent +fold]]
--- })
+-- Neovide Config
+vim.g.neovide_cursor_vfx_mode = "*"
+-- vim.g.neovide_transparency = 0.95

@@ -1,138 +1,119 @@
-vim.g.mapleader = " "
-
--- 减少输入
-local keymap = vim.keymap.set
-
------------- 分屏 ---------------
-
-keymap("", "sl", ":set splitright<CR>:vsplit<CR>")
-keymap("", "sh", ":set nosplitright<CR>:vsplit<CR>")
-keymap("", "sk", ":set nosplitbelow<CR>:split<CR>")
-keymap("", "sj", ":set splitbelow<CR>:split<CR>")
-
-keymap("n", "<UP>", ":res +5<CR>")
-keymap("n", "<down>", ":res -5<CR>")
-keymap("n", "<left>", ":vertical resize-5<CR>")
-keymap("n", "<right>", ":vertical resize+5<CR>")
-
----------------------------------
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
 
 
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
 
--- ---------- 插入模式 ----------
--- i
--- jk进入普通模式
-keymap("i", "jk", "<C-c>")
--- shiht + cr直接换行
-keymap("i", "<S-Enter>", "<Esc>o")
-keymap("i", "<C-/>", "<Esc>gcca")
-
--- 中英文符号
-keymap("i", "“", "\"")
-keymap("i", "‘", "'")
-keymap("i", "；", ";")
-keymap("i", "【", "[")
-keymap("i", "】", "]")
+" Do incremental searching.
+set incsearch
 
 
--- -----------------------------i END
+" Don't use Ex mode, use Q for formatting.
+map Q gq
 
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 
--- ---------- 普通模式 ----------
--- n
+" plug 'preservim/nerdtree'
 
--- 代码格式化
-keymap("n", "<LEADER>lf", ":lua vim.lsp.buf.format()<CR>")
--- 搜索 上一个 下一个 取消高亮
-keymap("n", "=", "nzz")
-keymap("n", "-", "Nzz")
-keymap("n", "<LEADER><CR>", ":noh<CR>")
----------------------------------
+set clipboard+=unnamed
+set number
+set relativenumber
+set autoindent
+set cindent
+set title
+set autoindent
+set hlsearch
 
--- 保存 关闭 重载配置
-keymap("n", "S", ":w<CR>")
-keymap("n", "s", "<nop>")
-keymap("n", "Q", ":q<CR>")
-keymap("n", "R", ":source $MYVIMRC<CR>")
----------------------------------
+set cursorline
+set showcmd
+set wildmenu
 
--- 打开文件树
-keymap("n", "tn", ":NvimTreeToggle<CR>")
+set sneak
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
 
--- 打开终端
-keymap("", "<C-\\>", ":ToggleTerm<CR>")
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
 
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
 
-keymap("n", "J", "5j")
-keymap("n", "K", "5k")
+let mapleader = " "
 
--- 切换 buffer
-keymap("n", "<C-l>", ":bnext<CR>")
-keymap("n", "<C-h>", ":bprevious<CR>")
--- 关闭
-keymap("n", "<LEADER>bw", ":bdelete<CR>")
--- sneak
-keymap("n", "f", "<Plug>Sneak_f")
-keymap("n", "F", "<Plug>Sneak_F")
-keymap("n", "<leader>s", "<Plug>Sneak_s")
-keymap("n", "<leader>S", "<Plug>Sneak_S")
+map J 5j
+map K 5k
 
+" 插入模式快速移动
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+" 其他模式快速移动
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+" 快速进行缩进
+nnoremap > >>
+nnoremap < <<
 
----------------------------------
+nmap == :<C-u>action ReformatCode<CR>
+vmap == :<C-u>action ReformatCode<CR>
+nmap <C-o> :action back<CR>
 
+nmap ge :action GotoNextError<CR>
+nmap cm :action CodeMenu<CR>
+nmap <leader>gh :action ShowUsages<CR>
+nmap <leader>gy :action ShowModulesDependencies<CR>
+nmap <leader>gi :action GotoImplementation<CR>
+nmap <leader>gs :action FileStructurePopup<CR>
+nmap gd :action GotoDeclaration<CR>
+nmap <leader>gr :action FindUsages<CR>
+nmap <leader>dd :action QuickJavaDoc<CR> " 显示文档
+nmap <leader>o :action FileStructurePopup<CR> " 大纲
+nmap <Enter> :action EditorSelectWord<CR>
+nmap <leader><Enter> :noh<CR>
 
+xmap <Enter> :action EditorSelectWord<CR>
+nmap <BS> :action EditorUnSelectWord<CR>
+xmap <BS> :action EditorUnSelectWord<CR>
 
--- -----------------------------n END
+nmap <C-j> :action GotoNextElementUnderCaretUsage<CR>
+nmap <C-k> :action GotoPrevElementUnderCaretUsage<CR>
 
+nmap <leader>rn :action RenameElement<CR>
+nmap <C-g> :action Annotate<CR>
+nmap gcc :action CommentByLineComment
 
+nmap Q :wq<CR>
+nmap s <nop>
+nmap S :action SaveAll<CR>
+nmap C :action ShowIntentionActions<CR>
+" nmap ca :action ShowIntentionActions<CR>
+nmap <C-\> :action ActivateTerminalToolWindow<CR>
 
--- ---------- 视觉模式 ----------
--- v
-keymap("v", "<C-/>", "gc")
--- keymap("v", "jk", "<C-c>")
-keymap("v", "J", "5j")
-keymap("v", "K", "5k")
-keymap("v", "H", "^")
-keymap("v", "L", "$")
+" nmap x \"_x
+nmap = nzz
+nmap - Nzz
+nmap dw vb\"_d
 
--- -----------------------------v END
+"nmap <C-a> gg<S-v>G
+nmap <leader>ss :split<Return><C-w>w<CR>
+nmap <leader>sv :vsplit<Return><C-w>w<CR>
 
+imap jk <C-c>
 
--- ---------- 终端快捷键 -----------
-
-function _G.set_terminal_keymaps()
-  local opts = { buffer = 0 }
-  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-  vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-  vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-  vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
-end
-
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-
-
--- ---------------------------------
---
--- debug
-keymap("n", "<leader>db",
-  "<cmd>lua require'dap'.toggle_breakpoint(); require'user.dap.dap-util'.store_breakpoints(true)<cr>", opts)
-keymap("n", "<leader>dB", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opts)
--- keymap("n", "<leader>dr", "lua require'dap'.repl.open()<cr>", opts)
-keymap("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
-keymap('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
-keymap("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
-keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
--- keymap("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opts)
--- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", opts)
--- keymap("n", "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", opts)
-
-
-keymap("n", "<LEADER>lf", "<cmd>lua vim.lsp.buf.format()<CR>")
--- 反转
-vim.keymap.set({ 'n', 'v' }, '<leader>cl', require('nvim-toggler').toggle)
+"Refactor
+nnoremap <leader>n :action Inline<CR>
+vnoremap <leader>n :action Inline<CR>
+set sneak
